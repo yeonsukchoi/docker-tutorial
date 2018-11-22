@@ -1,0 +1,23 @@
+#docker-compose.yml
+version: "2"
+
+services:
+    nginx:
+        container_name: nginx
+
+        build: ./nginx
+
+        links:
+            - app:app
+
+        ports: 
+            - "80:80"
+
+    app:
+        container_name: app
+        build: .
+
+        environment:
+            NODE_ENV: localhost 
+        ports:
+            - "3000"
