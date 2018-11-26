@@ -1,5 +1,5 @@
 # Dockerfile
-From node:8
+FROM node:8
 
 RUN mkdir -p /app
 
