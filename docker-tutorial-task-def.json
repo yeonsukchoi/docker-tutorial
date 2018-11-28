@@ -1,0 +1,54 @@
+{
+  "containerDefinitions": [
+    {
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "protocol": "tcp",
+          "containerPort": 80
+        }
+      ],
+      "cpu": 0,
+      "environment": [],
+      "mountPoints": [],
+      "memory": 128,
+      "volumesFrom": [],
+      "image": "442907900211.dkr.ecr.ap-northeast-2.amazonaws.com/docker-tutorial/nginx:latest",
+      "essential": true,
+      "links": [
+        "app:app"
+      ],
+      "name": "nginx"
+    },
+    {
+      "portMappings": [
+        {
+          "hostPort": 3000,
+          "protocol": "tcp",
+          "containerPort": 3000
+        }
+      ],
+      "cpu": 0,
+      "environment": [
+        {
+          "name": "NODE_ENV",
+          "value": "localhost"
+        }
+      ],
+      "mountPoints": [],
+      "memory": 128,
+      "volumesFrom": [],
+      "image": "442907900211.dkr.ecr.ap-northeast-2.amazonaws.com/docker-tutorial/node-server:latest",
+      "essential": true,
+      "name": "app"
+    }
+  ],
+  "placementConstraints": [],
+  "memory": "512",
+  "family": "docker-tutorial-task",
+  "requiresCompatibilities": [
+    "EC2"
+  ],
+  "cpu": "1024",
+  "volumes": []
+}
