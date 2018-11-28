@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 
 app.get('/', function (req, res) {
-  res.send('퇴근 해도 돼');
+  res.send('잘가');
 });
 
 
